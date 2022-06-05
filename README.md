@@ -6,8 +6,8 @@
 <p align="center">
 
 # Part One Video
-https://youtu.be/AijUCAfXygc
+https://www.youtube.com/watch?v=AijUCAfXygc
 
 # Part Two Video 
-https://youtu.be/gHTADnTPIko
+https://www.youtube.com/watch?v=gHTADnTPIko
 </p>
