@@ -1,0 +1,21 @@
+@import "compass/css3";
+
+.divwrap {
+  display: none;
+  margin-top: auto;
+  margin-left: auto;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+#canvas {
+  display: block;
+  margin: 50px auto;
+  width: 200px; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} 

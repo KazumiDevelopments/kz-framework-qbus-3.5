@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://kit.fontawesome.com/c5c5845a88.js" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script src="coloris.min.js" defer></script>
+    <script src="main.js" defer></script>
+    <link href="css/all.css" rel="stylesheet">
+    <link href="coloris.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <title>- Car Boosting - </title>
+</head>
+
+<body>
+
+    <div class="police-dispatch">
+
+    </div>
+
+    <div class="tablet-container" style="display: none;">
+    <!-- <div class="tablet-container"> -->
+        <div class="boosting-settings" style="font-family: 'Segoe UI', Arial , sans-serif;color: white;display: none;">
+            <h1 style="font-family: 'Segoe UI', Arial , sans-serif;color: white;font-size: 20px;justify-content: center;align-items: center;text-align: center;">
+                Settings
+                <button class="btn-closesettings" style="left: 90%;position: absolute;background-color: transparent;border-style: none; bottom: 96.25%; font-size: large;">
+                    <i class="fal fa-times-circle"></i>
+                </button>
+            </h1>
+            <div style="margin-top: 2vh;display: block;justify-content: center;align-items: center;text-align: center;">
+                <p style="font-size: 11px">Background URL</p>
+                <i class="fal fa-images"></i>
+                <input style="width: 80%;color: white;background-color: transparent;stroke: none;border-bottom: 1px solid white;border-top: none;border-left: none;border-right: none;outline: none;" type='text' id='bacgkroundurl'>
+                <br>
+                <button id='background-apply' class="btn-boosting" style="margin-top: 2vh;margin-left: -0.1vh;border-radius: 5px;padding: 0.75vh;">Apply</button>
+                <button id='background-reset' class="btn-boosting" style="margin-top: 2vh;margin-left: -0.1vh;border-radius: 5px;padding: 0.75vh;">Reset</button>
+            </div>
+            <p style="text-align: center;">Taskbar colour</p>
+            <div class="examples">
+                <div class="example">
+                    <div class="example full">
+                        <input class="colorpicker" type="text" value="#23393ab6" data-coloris>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tablet-apps">
+            <div class="tablet-app boosting">
+
+                <div style="width:4vh;height: 4vh;border-radius: 5px;margin-left: 0.4vh;background-color: #353d49;font-size: 12px;display: flex;justify-content: center;align-items: center;">
+                    <h1 style="color: white;font-family: 'Segoe UI', Arial , sans-serif;">B</h1>
+                </div>
+                <p style="position: absolute;color: white;font-family: 'Segoe UI', Arial , sans-serif;font-size: 11px;margin-top: 0.7vh;margin-left: 0.7vh;white-space: nowrap;text-align: center;">Boosting</p>
+            </div>
+            <div class="tablet-app settings" style="margin-top: 4vh;">
+                <div style="background-color: whitesmoke;width:4vh;height: 4vh;border-radius: 5px;margin-left: 0.4vh;font-size: 12px;display: flex;justify-content: center;align-items: center;">
+                    <img src="images/settings-cog.png" style="width: 80%;height: auto;">
+                    <p style="position: absolute;color: white;font-family: 'Segoe UI', Arial , sans-serif;font-size: 11px;margin-top: 6.7vh;margin-left: 0vh;white-space: nowrap;">Settings</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="tablet-taskbar" style="display: flex;align-items: center;">
+            <img id="logoicon" style="width:1%;height: auto;margin-left: 1.2vh;" src="images/logo.png">
+            <img style="margin-left:2vh;width:1.3%;height: auto;" src="images/fileexplorer.png">
+            <span style="left: 88.75%;position: relative;font-size: 14px;color: white;">
+                <i class="fas fa-volume-up"></i>
+            </span>
+            <span style="left: 88.75%;position: relative;font-size: 14px;color: white;">
+            <i class="fas fa-wifi"></i>
+            </span>
+            <div style="left: 89.00%;position: relative;color: white;font-family: 'Segoe UI', Arial , sans-serif;font-size: 14px">
+                <p id='clock'>12:53 AM</p>
+            </div>
+            <span style="left: 89.25%;position: relative;font-size: 14px;color: white;">
+                <i class="fas fa-comment-alt-lines"></i>
+            </span>
+        </div>
+
+        <div class="boosting-container" style="display: none;">
+            <div id="StartContract" style="display: none;">
+                <h1 style="font-size: 20px">Select Type</h1>
+                <p>If you choose to vin scratch it will cost an additional 350 BNE to claim ownership</p>
+                <a id="closevin" style="position: absolute;left: 94%;top: 6%;font-weight: bold;">X</a>
+                <div style="display: flex;justify-content: center;align-items: center;position: absolute;top: 70%;width: 100%;">
+                    <button data-idk='vin' class="btn-dialog" style="margin-left: 3vh;">VIN SCRATCH</button>
+                    <button data-idk='normal' class="btn-dialog" style="margin-left: 3vh;">NORMAL DROPOFF</button>
+                </div>
+
+
+            </div>
+			<div id="TransferContract" style="display: none;">
+                <h1 style="font-size: 20px">Transfer Contract</h1>
+                <p>Enter Citizens ID</p>
+                <a class="btn-closetransfer" id="closetransfer" style="position: absolute;left: 94%;top: 6%;font-weight: bold;">
+				 <i class="fal fa-window-close"></i>
+				</a>
+				<style>
+				input::-webkit-outer-spin-button,
+				input::-webkit-inner-spin-button {
+				  -webkit-appearance: none;
+                  margin: 0;
+                }
+				</style>
+				<input style="width: 25%;color: white;background-color: transparent;stroke: none;border-bottom: 1px solid white;border-top: none;border-left: none;border-right: none;outline: none;text-align: center;" type='number' id='ContractReceiver' placeholder="Enter Recipients ID" required>
+				<div style="display: flex;justify-content: center;align-items: center;position: absolute;top: 70%;width: 100%;">
+                    <button data-transfer='Send' class="btn-transferdialog" style="margin-left: 0vh;">Transfer Contract</button>
+                </div>
+            </div>
+            <div class="boosting-header" style="align-items: center;display: flex;">
+                <p style="float: left;font-family: 'Segoe UI', Arial , sans-serif;font-size: 12px;margin-left: 1vh;color: white;font-weight: bold;">Boosting</p>
+                <button class="btn-closeboosting" style="left: 92.5%;position: relative;">
+                    <i class="fal fa-window-close"></i>
+                </button>
+            </div>
+            <div class="boosting-footer" style="align-items: center;display: flex;position: absolute;bottom: 90%;">
+                <p id="bnestatus" style="float: left;font-family: 'Segoe UI', Arial , sans-serif;font-size: 12px;margin-left: 1vh;color: white;font-weight: bold;">Wallet: X BNE</p>
+            </div>
+            <div class="boosting-topbuttons" style="position: absolute;top: 10%;left: 3%;width: 90%;">
+                <button class="btn-boosting" style="margin-left: -0.1vh;">MY CONTRACTS</button>
+                <button class="btn-JoinboostingQ" style="position: absolute;left: 95.0%;white-space: nowrap;">JOIN QUEUE</button>
+                <button class="btn-leaveboostingQ" style="position: absolute;left: 95.0%;white-space: nowrap;">EXIT QUEUE</button>
+                <div class="boosting-bar">
+                    <div class="prog-bar"></div>
+                </div>
+                <div class="vehicles-bar" style="color: white;font-family: 'Segoe UI', Arial , sans-serif;font-size: 14px;max-height: 54vh;overflow-y: auto;overflow-x: hidden;width: 104%;display: flex;flex-wrap: wrap;gap: 4vmin;">
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

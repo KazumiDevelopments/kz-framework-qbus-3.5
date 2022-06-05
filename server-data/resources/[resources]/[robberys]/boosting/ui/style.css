@@ -1,0 +1,450 @@
+body {
+    overflow-x: hidden;
+}
+
+input[type=number] {
+  width: 200px;
+  height: 30px;
+  padding: 0 5px;
+}
+
+.examples {
+    display: flex;
+    position: relative;
+    left: 27.5%;
+    flex-wrap: wrap;
+}
+
+.example {
+    flex-shrink: 0;
+    position: relative;
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+.square .clr-field button,
+.circle .clr-field button {
+    width: 22px;
+    height: 22px;
+    left: 5px;
+    right: auto;
+    border-radius: 5px;
+}
+
+.square .clr-field input,
+.circle .clr-field input {
+    padding-left: 36px;
+}
+
+.circle .clr-field button {
+    border-radius: 50%;
+}
+
+.full .clr-field button {
+    width: 105%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.tablet-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 85vh;
+    width: 150vh;
+    border: 4px solid #212428;
+    background-image: url("images/npbackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.tablet-taskbar {
+    position: absolute;
+    top: 96.6%;
+    background-color: #23393ab6;
+    width: 100%;
+    height: 3vh;
+}
+
+.tablet-apps {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+
+.boosting-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2f303b;
+    height: 68vh;
+    width: 105vh;
+}
+
+.prog-bar {
+    position: relative;
+    width: 15%;
+    border-radius: 15px;
+    background-color: #ace9e6;
+    height: 100%;
+    max-width: 100%;
+}
+
+.boosting-header {
+    background-color: #3c3d4a;
+    width: 100%;
+    height: 3vh;
+}
+
+.btn-boosting {
+    background-color: #3c3d4a;
+    padding: 1.5vh;
+    border: none;
+    stroke: none;
+    color: #ace9e6;
+    border-radius: 2px;
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.btn-boosting:hover {
+    transition: 1s all;
+    background-color: #313539;
+}
+
+.btn-JoinboostingQ {
+    background-color: #3c3d4a;
+    padding: 1.5vh;
+    border: none;
+    stroke: none;
+    color: #28a745;
+    border-radius: 2px;
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.btn-JoinboostingQ:hover {
+    transition: 1s all;
+    color: rgb(255 255 255);
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-leaveboostingQ {
+    background-color: #3c3d4a;
+    padding: 1.5vh;
+    border: none;
+    stroke: none;
+    color: red;
+    border-radius: 2px;
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.btn-leaveboostingQ:hover {
+    transition: 1s all;
+    color: rgb(255 255 255);
+    background-color: rgba(200, 0, 0, 1.0);
+}
+
+.btn-closeboosting {
+    background-color: #3c3d4a;
+    border: none;
+    stroke: none;
+    color: white;
+    font-size: 20px;
+}
+
+.btn-closeboosting:hover {
+    transition: 0.5s all;
+    color: red;
+}
+
+.btn-closetransfer:hover {
+    transition: 0.5s all;
+    color: red;
+}
+
+.btn-startboosting {
+    background-color: #2f303b;
+    padding: 1.5vh;
+    border: none;
+    stroke: none;
+    color: #ffffffed;
+    border-radius: 2px;
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.btn-startboosting:hover {
+    transition: 1s all;
+    color: rgb(255 255 255);
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-transferbutton {
+    background-color: #2f303b;
+    padding: 1.5vh;
+    border: none;
+    stroke: none;
+    color: #ffffffed;
+    border-radius: 2px;
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.btn-transferbutton:hover {
+    transition: 1s all;
+    color: rgb(255 255 255);
+    background-color: #ce9f14;
+    border-color: #ce9f14;
+}
+
+
+.btn-stopboosting {
+    background-color: #2f303b;
+    padding: 1.5vh;
+    border: none;
+    stroke: none;
+    color: #ffffffed;
+    border-radius: 2px;
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.btn-stopboosting:hover {
+    transition: 1s all;
+    color: rgb(255 255 255);
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-dialog {
+    background-color: #3c3d4a;
+    padding: 1.3vh;
+    border: none;
+    stroke: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 10px;
+    margin-left: 10px;
+    transition: 1s all;
+}
+
+.btn-dialog:hover {
+    transition: 1s all;
+    background-color: #313539;
+}
+
+.btn-transferdialog {
+    background-color: #3c3d4a;
+    padding: 1.3vh;
+    border: none;
+    stroke: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 10px;
+    margin-left: 10px;
+    transition: 1s all;
+}
+
+.btn-transferdialog:hover {
+    transition: 0.5s all;
+    background-color: #28a745;
+}
+
+.btn-closesettings {
+    color: white;
+}
+
+.btn-closesettings:hover {
+    transition: 0.5s all;
+    color: red;
+}
+
+.boosting-settings {
+    position: absolute;
+    top: 7%;
+    left: 78%;
+    z-index: 2;
+    width: 30vh;
+    height: 70vh;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.763);
+}
+
+.boosting-bar {
+    margin-top: 1vh;
+    border-radius: 15px;
+    width: 104%;
+    height: 1vh;
+    background-color: #3c3d4a;
+    margin-bottom: 1vh;
+}
+
+.vehicle-boosting {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #3c3d4a;
+    height: 38.7vh;
+    width: 30%;
+    border-radius: 10px;
+}
+
+.circle-shit {
+    height: 5vh;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5vh;
+    border-radius: 55px;
+    background-color: #2f303b;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 3px solid #a9d4da;
+    display: flex;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+#StartContract {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 36vh;
+    box-shadow: 0px 0px 15px 4px #0000003a;
+    color: white;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    height: 15vh;
+    border-radius: 15px;
+    z-index: 8;
+    text-align: center;
+    background-color: #2f303b;
+}
+
+#TransferContract {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 36vh;
+    box-shadow: 0px 0px 15px 4px #0000003a;
+    color: white;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    height: 15vh;
+    border-radius: 15px;
+    z-index: 8;
+    text-align: center;
+    background-color: #2f303b;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.slideinanim {
+    animation-name: slideIn;
+    animation-duration: 1s;
+}
+
+@keyframes slideout {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(110%);
+    }
+}
+
+.slideoutanim {
+    animation-name: slideout;
+    animation-duration: 1s;
+}
+
+.police-dispatch {
+    position: absolute;
+    right: 0.3%;
+    top: 3%;
+}
+
+.plate {
+    border-top: 1px solid white;
+    display: inline;
+    background-color: #a9d4da;
+    padding: 0.2vmin;
+    padding-left: 0.2vmin;
+    text-shadow: 0px 0px 4px rgb(0, 0, 0);
+    border-radius: 0.2vmin;
+}
+
+.fas {
+    vertical-align: middle;
+    padding-right: 6px;
+    margin-bottom: 2px;
+    left: -1px;
+    min-width: 13px;
+    text-align: center;
+}
+
+.police-alert {
+    position: relative;
+    margin-top: 1vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1.0vmin;
+    height: 10vh;
+    width: 30vh;
+    background-color: #2f303bd1;
+    border-radius: 0.4vmin;
+    color: white;
+    border-right: 2px solid #a9d4da;
+}
+
+.police-info {
+    font-size: 1em;
+    line-height: calc(1.5em + 0.5vmin);
+    vertical-align: middle;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.75);
+    margin-top: 22px;
+    font-weight: 500;
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #434950;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #434950;
+}

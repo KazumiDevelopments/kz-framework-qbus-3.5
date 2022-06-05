@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<script src="js.js" type="text/javascript"></script>
+		<style>
+			p
+			{
+				text-shadow: 1px 0px 0px #000000FF, -1px 0px 0px #000000FF, 0px -1px 0px #000000FF, 0px 1px 0px #000000FF;
+			}
+			.color-0{color: #ffffff;}
+			.color-1{color: #ff4444;}
+			.color-2{color: #99cc00;}
+			.color-3{color: #ffbb33;}
+			.color-4{color: #0099cc;}
+			.color-5{color: #33b5e5;}
+			.color-6{color: #aa66cc;}
+			.color-8{color: #cc0000;}
+			.color-9{color: #cc0068;}
+		</style>
+	</head>
+	<body>
+		<div id="display" style="display: block;">
+			<p id="chat" dir="ltr" style="left: calc(66% - 20px);top: 41%;width: 34%;height: 18%;position: fixed;color: #FFFFFF;overflow-y: hidden;overflow-x: hidden;text-align: right;font-family: Calibri;font-size: 1.50vh;-webkit-user-select: none;pointer-events: none;opacity: 0.0;">
+			</p>
+			<div id="displayinput" style="display: none;">
+				<div type="text" style="left: calc(66% - 20px);top: calc(59% + 30px);width: calc(34% + 4px);height: 28px;position: fixed;background-color: #00000066;border: 1px solid #888888;-webkit-user-select: none;pointer-events: none;border-radius: 4px;"></div>
+				<input id="input" dir="ltr" maxlength="256" type="text" style="left: calc(66% - 18px);top: calc(59% + 30px);width: 34%;height: 28px;position: fixed;background-color: #00000000;border: 0px;outline: 0px;color: #FFFFFF;font-size: 1.50vh;font-family: Calibri;"/>
+				<p id="tiptext" style="left: calc(66% - 20px);top: calc(59% + 68px - 2.0vh);width: calc(34% + 4px);font-size: 1.7vh;font-family: Calibri;color: #AAAAAA;background-color: #00000066;position: fixed;"></p>
+			</div>
+		</div>
+	</body>
+</html>

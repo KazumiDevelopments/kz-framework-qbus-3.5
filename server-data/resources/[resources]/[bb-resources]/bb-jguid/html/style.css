@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'first';
+    src: url(https://cdn.discordapp.com/attachments/717894831208267786/749302811908374648/BACK_TO_BLACK_DEMO.TTF);
+}
+
+@font-face {
+    font-family: 'seco';
+    src: url(https://cdn.discordapp.com/attachments/717894831208267786/749303717911855134/BAHNSCHRIFT.TTF);
+}
+
+body {
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#present-logo {
+    display: none;
+    position: relative;
+    top: 250px;
+    width: 18%;
+}
+
+#present-text {
+    display: none;
+    position: relative;
+    top: 200px;
+    
+    font-family: 'first';
+}
+
+.page-one {
+    display: none;
+    color: white;
+    position: absolute;
+    bottom: 15%;
+    left: 3%;
+    align-content: left;
+    text-align: left;
+    line-height: 0.2;
+}
+
+.page-one h1 {
+    display: none;
+    font-family: 'first';
+    font-size: 36px;
+}
+
+.page-one h2 {
+    display: none;
+    font-family: 'seco';
+    font-size: 19px;
+}
+
+.skip-container {
+    display: none;
+    background-color: rgba(46, 46, 46, 0.63);
+    position: absolute;
+    height: 4%;
+    width: 7%;
+    border-left: 3px solid red;
+    right: 0px;
+    bottom: 8%;
+}
+
+#skip {
+    font-size: 20px;
+    font-family: 'seco';
+    position: relative;
+    top: 24%;
+}

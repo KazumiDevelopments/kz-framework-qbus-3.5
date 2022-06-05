@@ -1,0 +1,10 @@
+RegisterServerEvent("nevo:ready")
+AddEventHandler("nevo:ready", function()
+    RLCore.Functions.CreateUseableItem("repairkit", function(source, item)
+        TriggerClientEvent("nevo:repairing", source, false)
+    end)
+    
+    RLCore.Functions.CreateUseableItem("advancedrepairkit", function(source, item)
+        TriggerClientEvent("nevo:repairing", source, true)
+    end)
+end)

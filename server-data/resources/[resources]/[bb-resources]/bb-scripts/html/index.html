@@ -1,0 +1,156 @@
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Assistant&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<script src="java.js" type="text/javascript"></script>
+		<script type="text/javascript" src="all.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="all.min.css">
+  		
+  		<style>
+  			@font-face {
+	  		font-family: heebo;
+  			src: url(https://cdn.discordapp.com/attachments/548137697382760460/589533986682961979/Heebo-Regular.ttf);
+            }
+
+            .switch {
+                position: absolute;
+                display: inline-block;
+                width: 40px;
+                height: 23px;
+                left: 60%;
+            }
+
+            .switch input { 
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            .sliders {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+            .sliders:before {
+            position: absolute;
+            content: "";
+            height: 17px;
+            width: 17px;
+            left: 4px;
+            bottom: 3px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            }
+
+            input:checked + .sliders {
+            background-color: #2196F3;
+            }
+
+            input:focus + .sliders {
+            box-shadow: 0 0 1px #2196F3;
+            }
+
+            input:checked + .sliders:before {
+            -webkit-transform: translateX(17px);
+            -ms-transform: translateX(17px);
+            transform: translateX(17px);
+            }
+
+            /* Rounded sliders */
+            .sliders.round {
+            border-radius: 34px;
+            }
+
+            .sliders.round:before {
+            border-radius: 50%;
+            }
+		</style>
+	</head>
+
+	<body>
+		<center>
+			<div class="police-actives" id="police-actives-div" style="position: absolute; 
+				left: 47%; top: 10px; 
+				background-color: rgba(0, 0, 0, 0.45);
+				
+				display: block;
+				border-top: 5px solid rgb(0, 102, 255);
+
+				height: auto;
+				width: auto;
+				-webkit-box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.29);
+                -moz-box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.29);
+                box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.29);
+                ">
+                
+                <i class="material-icons" id="close-reg1" style="position: absolute;
+				right: 8px;
+				top: 6px;
+				color: rgb(255, 255, 255);
+				background: rgb(24, 24, 24);
+				border-radius: 50%;
+                opacity: 0.5;
+				font-size: 14px;" onclick="closeNUI()">close</i>
+				
+				<h1 style="font-size: 26px; color: white; font-family: heebo; padding-left: 15px; padding-right: 15px;" id="title">Active Officers</h1>
+				<div id="police-actives-data" style="position: relative; top: -20px;">
+					<!-- js data here -->
+				</div>
+            </div>
+            
+            <div class="police-settings" id="police-settings" style="position: absolute; 
+				left: 47%; top: 150px; 
+				background-color: rgba(0, 0, 0, 0.45);
+				
+				display: block;
+                border-top: 7px solid rgb(0, 102, 255);
+                padding-bottom: 60px;
+
+				height: auto;
+				width: auto;
+				-webkit-box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.29);
+                -moz-box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.29);
+                box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.29);
+				">
+
+				<i class="material-icons" id="close-reg1" style="position: absolute;
+				right: 8px;
+				top: 6px;
+				color: rgb(255, 255, 255);
+				background: rgb(24, 24, 24);
+				border-radius: 50%;
+                opacity: 0.5;
+				font-size: 14px;" onclick="closeNUI()">close</i>
+				
+				<h1 style="font-size: 24px; color: white; font-family: heebo; padding-left: 25px; padding-right: 25px; padding-bottom: 5px;" id="title">Settings Panel</h1>
+				<div id="police-settings-data" style="position: relative; top: -20px;">
+                    <!-- js data here -->
+                    <div class='settings-box' id='settings-players' style='padding-left: 25px; padding-right: 25px;'>
+                        <span style='font-size: 14px; color: white;'>Font Size: </span><input style="position:relative; top: 4px" oninput='updateMaxPlayers(this.id, this.value)' type="range" min="3" max="9" value="3" class="slider" id="fontsize-range"> <span id="fontsize-range-data" style="color: white;;">15</span>
+                    </div>
+
+                    <label class="switch" style="top: 30px">
+                        <span style='position:absolute;width: 100px; right: 150%; top: 4px; font-size: 14px; color: white;'>Center Text: </span>
+                        <input type="checkbox" />
+                        <span class="sliders round"></span>
+                    </label>
+
+                    <label class="switch" style="top: 60px">
+                        <span style='position:absolute;width: 100px; right: 150%; top: 4px; font-size: 14px; color: white;'>Open: </span>
+                        <input type="checkbox" />
+                        <span class="sliders round"></span>
+                    </label>
+				</div>
+			</div>
+		</center>
+	</body>
+</html>

@@ -1,0 +1,193 @@
+{
+    "configId": "np-vehicles:pursuitModes",
+    "client": {
+        "global": {
+            "vehicles": [
+                { "model": "npolchar", "preset": "generic" },
+                { "model": "npolstang", "preset": "generic" },            
+                { "model": "npolchal", "preset": "generic" },
+                { "model": "npolvette", "preset": "generic" },
+                { "model": "npolmm", "preset": "motorbike" },
+                { "model": "npolvic", "preset": "cruiser" }
+            ],
+            "presets": [
+                {
+                    "id": "generic",
+                    "modes": [
+                        {
+                            "name": "A",
+                            "appearance": {
+                                "colors": {
+                                    "xenon": 0
+                                }
+                            },
+                            "mods": {
+                                "Turbo": false,
+                                "Engine": -1,
+                                "Brakes": -1,
+                                "Transmission": -1,
+                                "XenonHeadlights": 1
+                            },
+                            "handling": [
+                                { "field": "fInitialDriveForce", "multiplier": 0.9 }
+                            ]
+                        },
+                        {
+                            "name": "S+",
+                            "appearance": {
+                                "colors": {
+                                    "xenon": 0
+                                }
+                            },
+                            "mods": {
+                                "Turbo": 1,
+                                "Engine": 2,
+                                "Brakes": 1,
+                                "Transmission": 2,
+                                "XenonHeadlights": 1
+                            },
+                            "handling": [
+                                { "field": "fInitialDriveForce", "multiplier": 0.9 }
+                            ]
+                        },
+                        {
+                            "name": "A+",
+                            "appearance": {
+                                "colors": {
+                                    "xenon": 0
+                                }
+                            },
+                            "mods": {
+                                "Turbo": 1,
+                                "Engine": 4,
+                                "Brakes": 2,
+                                "Transmission": 3,
+                                "XenonHeadlights": 1
+                            },
+                            "handling": [
+                                { "field": "fInitialDriveForce", "multiplier": 1.2 }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "motorbike",
+                    "modes": [
+                        {
+                            "name": "A",
+                            "apperance": {
+                                "colors": {
+                                    "xenon": 0
+                                }
+                            },
+                            "modes": [
+                                {
+                                    "name": "A",
+                                    "appearance": {
+                                        "colors": {
+                                            "xenon": 0
+                                        }
+                                    },
+                                    "mods": {
+                                        "Turbo": 1,
+                                        "Engine": 5,
+                                        "Brakes": 5,
+                                        "Transmission": 5,
+                                        "XenonHeadlights": 1
+                                    },
+                                    "handling": [
+                                        { "field": "fInitialDriveMaxFlatVel", "multiplier": 1.45 },
+                                        { "field": "fInitialDriveForce", "multiplier": 1.0 },
+                                        { "field": "fTractionCurveMax", "multiplier": 0.83 },
+                                        { "field": "fTractionCurveMin", "multiplier": 0.83 }
+                                    ]
+                                },
+                                {
+                                    "name": "A+",
+                                    "appearance": {
+                                        "colors": {
+                                            "xenon": 0
+                                        }
+                                    },
+                                    "mods": {
+                                        "Turbo": 1,
+                                        "Engine": 5,
+                                        "Brakes": 5,
+                                        "Transmission": 5,
+                                        "XenonHeadlights": 1
+                                    },
+                                    "handling": [
+                                        { "field": "fInitialDriveMaxFlatVel", "multiplier": 1.7 },
+                                        { "field": "fInitialDriveForce", "multiplier": 1.0 },
+                                        { "field": "fTractionCurveMax", "multiplier": 1.0 },
+                                        { "field": "fTractionCurveMin", "multiplier": 1.0 }
+                                    ]
+                                },
+                                {
+                                    "name": "S+",
+                                    "appearance": {
+                                        "colors": {
+                                            "xenon": 0
+                                        }
+                                    },
+                                    "mods": {
+                                        "Turbo": 1,
+                                        "Engine": 5,
+                                        "Brakes": 5,
+                                        "Transmission": 5,
+                                        "XenonHeadlights": 1
+                                    },
+                                    "handling": [
+                                        { "field": "fInitialDriveMaxFlatVel", "multiplier": 2.05 },
+                                        { "field": "fInitialDriveForce", "multiplier": 1.1 },
+                                        { "field": "fTractionCurveMax", "multiplier": 1.0 },
+                                        { "field": "fTractionCurveMin", "multiplier": 1.0 }
+                                    ]
+                                }
+                            ] 
+                        },
+                        {
+                            "id": "cruiser",
+                            "modes": [
+                                {
+                                    "name": "Normal",
+                                    "appearance": {
+                                        "colors": {
+                                            "xenon": 0
+                                        }
+                                    },
+                                    "mods": {
+                                        "Turbo": false,
+                                        "Engine": -1,
+                                        "Brakes": -1,
+                                        "Transmission": -1
+                                    },
+                                    "handling": [
+                                        { "field": "fInitialDriveForce", "multiplier": 1.0}
+                                    ]
+                                },
+                                {
+                                    "name": "A+",
+                                    "appearance": {
+                                        "colors": {
+                                            "xenon": 0
+                                        }
+                                    },
+                                    "mods": {
+                                        "Turbo": 1,
+                                        "Engine": 2,
+                                        "Brakes": 1,
+                                        "Transmission": 2
+                                    },
+                                    "handling": [
+                                        { "field": "fInitialDriveForce", "multiplier": 1.0 }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="scripts.js" type="text/javascript"></script>
+    <script src="debounce.min.js" type="text/javascript"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <title>Inventory</title>
+</head>
+
+<body style="position: relative">
+    <div id="ActionBar"></div>
+    <div id="UseBar"></div>
+    <div id="app" style="height: 100%; width: 100%">
+        <div id="inventory-wrapper" class="inventory" style="height: 100%; width: 100%">
+            <div class="move-form" id="inventory-wrapper">
+                <div class="bottom-buttons">
+                    <span class="bottom-button settings-button" onclick="$('.settings-menu').fadeIn();">⚙️</span>
+                    <span class="bottom-button help-button" onmouseover="$('.help-menu').fadeIn();"
+                        onmouseout="$('.help-menu').fadeOut();">
+                        ?
+                    </span>
+                </div>
+            </div>
+            <div id="Logs" class="Logs"></div>
+            <div id="CurrentInformation" class="CurrentInformation"></div>
+
+            <div id="containers-wrapper">
+                <div id="mainInv" class="inventory-box">
+                    <div id="mainInvHeading" class="inventory-heading"></div>
+                    <!-- <div id="wrapPersonalWeight" class="wrapPersonalWeight"></div> -->
+                    <div id="wrapmain" onfocus="this.blur();" class="wrapmain"></div>
+                </div>
+
+                <div class="inventory-actions-wrapper">
+                    <div class="inventory-actions" id="usearea">
+                        <input tabindex="-1" type="number" id="move-amount" max="9999" min="0" readonly
+                            placeholder="Amount" />
+                        <button class="use-btn" id="usearea" style="margin: 0.5rem 0;">Use</button>
+                        <button id="CloseInv" class="use-btn">Close</button>
+                    </div>
+                </div>
+
+                <div id="secondaryInv" class="inventory-box">
+                    <div id="secondaryInvHeading" class="inventory-heading"></div>
+                    <div class="craftingSearch">
+                        <img src='search-solid.png' id='weight-hanger' class='searchIcon' /><input type='text'
+                            name='craftSearch' placeholder='Search' class='craftSearch'>
+                    </div>
+                    <div class='cashcontainer'>You have <span class='invShopMoney' id="invShopMoney"></span> to spend
+                    </div>
+
+                    <!-- <div id="wrapSecondaryWeight" class="wrapSecondaryWeight"></div> -->
+                    <div id="wrapsecondary" onfocus="this.blur();" class="wrapsecondary"></div>
+                </div>
+
+
+            </div>
+            <div id="draggedItem" class="item"></div>
+
+            <div class="help-menu">
+                <h3>About:</h3>
+                <p>
+                    To move a full stack, make sure the AMOUNT field is empty (shows AMOUNT)<br />
+                    Using the numbers or mouse wheel you can set the amount you would like to move. You can do this
+                    while dragging or
+                    beforehand.
+                    <br />
+                    To <strong>USE</strong> an item, drag it into the middle area.
+                    <br />
+                    The AMOUNT field will not reset on close, so get used to clearing it!
+                </p>
+                <h3>Keybinds (defaults):</h3>
+                <ul>
+                    <li>Shift + Click: Moves half of the stack to opposite inventory.</li>
+                    <li>Ctrl + Click: Moves amount inputted in AMOUNT to opposite inventory.</li>
+                    <li>Left Click: Normal Drag (configurable to be like Right Click in settings)</li>
+                    <li>Right Click: No Hold to Drag</li>
+                    <li>Middle Click: Uses Item</li>
+                    <hr />
+                    <li>Scroll Wheel: While hovering over AMOUNT will increase/decrease value</li>
+                    <li>Numbers 0 - 9: Will input the typed number.</li>
+                    <li>Any other key: Will set AMOUNT to blank/move entire stack.</li>
+                    <hr />
+                    <li>Pressing Ctrl + C while hoving over an item will copy the description, useful for getting
+                        evidence numbers.</li>
+                </ul>
+                <h3>Shops:</h3>
+                <p>Put in the amount you want to buy in the AMOUNT field and then drag the shop item into your
+                    inventory.</p>
+                <h3>Crafting:</h3>
+                <p>
+                    Make sure you know the requirements beforehand for any crafting menu that takes a long time to open.
+                    <br />
+                    When crafting, you have to put in the exact amount you can craft.
+                </p>
+                <h3>Item Durability:</h3>
+                <p>
+                    Almost all items will decay over time (including weapons) The bar under each item will slowly
+                    decrease in size as it
+                    decays more and more, then eventually fade to a reddish color. Once an item is fully destroyed, it
+                    will have a solid
+                    red bar.
+                </p>
+            </div>
+            <div class="settings-menu">
+                <input type="checkbox" name="enableHoldToDrag" /> Hold Left Click to Drag
+                <br />
+                <input type="checkbox" checked name="enableClickToClose" /> Clicking Outside Inventory Closes
+                <br />
+                <input type="checkbox" name="enableCtrlMovesHalf" /> Ctrl Moves Half (Unchecked makes Shift move half)
+                <br />
+                <input type="checkbox" checked name="enableShowTooltips" /> Show Tooltips
+                <br />
+                <input type="checkbox" checked name="enableBlur" /> Enable Background Blur
+                <hr />
+                <button type="button" class="save-settings">Save</button>
+                <button type="button" onclick="$('.settings-menu').fadeOut();">Close</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

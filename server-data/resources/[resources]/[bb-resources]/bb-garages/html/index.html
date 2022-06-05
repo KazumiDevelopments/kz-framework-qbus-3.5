@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="js/demo/datatables-demo.js"></script>
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"/>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">    <link rel="canonical" href="https://www.fontawesomecheatsheet.com/font-awesome-cheatsheet-5x/">
+
+        <link href="style.css" rel="stylesheet"/>
+        <title>barbaroNN Garages</title>
+    </head>
+
+    <body class="w3-animate-bottom" id="page-top" style="display: none">
+        <div id="wrapper">
+            <div id="content-wrapper" class="d-flex flex-column">
+                <div id="content">
+                    <div class="container">
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h3 mb-0 text-gray-100" id="garage-name">
+                                Garage Menu
+                            </h1>
+                        </div>
+
+                        <div class="garage-container">
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 mb-4">
+                                    <div class="card border-left-primary shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                        Quick Park
+                                                    </div>
+                                                    <div id="quick-park-name" class="h5 mb-0 text-gray-200">
+                                                        Park your "RS7"
+                                                    </div>
+                                                    <div id="quick-park-payment" class="mb-0 text-gray-200">
+                                                        10,000$ per hour
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-parking fa-2x text-gray-300"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6 col-md-6 mb-4">
+                                    <div class="card border-left-success shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                        Free Parking Slots
+                                                    </div>
+                                                    <div class="row no-gutters align-items-center">
+                                                        <div class="col-auto">
+                                                            <div class="h5 mb-0 mr-3 text-gray-200" id="garage-slots">
+                                                                0%
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="progress progress-sm mr-2">
+                                                                <div class="progress-bar bg-success" id="garage-slots-bar" role="progressbar" style="
+                                                                        width: 0%;
+                                                                    " aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" id="vehicles-table-row">
+                                <div class="card shadow mb-4 fix-width">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 text-gray-200">
+                                            Your vehicles
+                                        </h6>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-dark" id="dataTable" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Model</th>
+                                                        <th>Plate</th>
+                                                        <th>Stats</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="vehicles-table">
+                                                    <!--
+                                                    <tr class='border-left-primary-2'>
+                                                        <td>RS7</td>
+                                                        <td>ZGA-789</td>
+                                                        <td>61</td>
+                                                        <td>
+                                                            <a id='button' btn-type='unknown' btn-plate='TEST123' href="#" class="btn btn-warning btn-icon-split">  <span class="icon text-white-50">    <i class="fas fa-exclamation-triangle"></i>  </span>  <span class="text">TEST</span></a>
+                                                        </td>
+                                                    </tr>-->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="impound-container" style="display: none">
+                            <div class="row" id="vehicles-table-row">
+                                <div class="card shadow mb-4 fix-width">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-gray-800">
+                                            Your vehicles
+                                        </h6>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered" id="ImpounddataTable" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Model</th>
+                                                        <th>Plate</th>
+                                                        <th>Option</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="impound-table"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logout Modal-->
+        <div class="payModal" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            Accept the payment
+                        </h5>
+                        <button class="close" type="button" btn-type="cancel-this" id="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="pay-text"></div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" btn-type="cancel-this" id="button" type="button" data-dismiss="modal">
+                            Cancel
+                        </button>
+                        <a class="btn btn-primary" style="color: white" id="button" btn-type="proccess-payment">Proccess</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
