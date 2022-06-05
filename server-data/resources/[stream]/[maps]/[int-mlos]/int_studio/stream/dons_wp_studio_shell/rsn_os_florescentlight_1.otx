@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image rsn_os_florescentlight_1.dds
+	Type Regular
+	PixelFormat DXT1
+	Levels 7
+	Usage DIFFUSE
+	UsageFlags -
+	ExtraFlags 0
+}

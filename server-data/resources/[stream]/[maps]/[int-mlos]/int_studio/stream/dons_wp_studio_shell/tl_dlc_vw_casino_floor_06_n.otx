@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image tl_dlc_vw_casino_floor_06_n.dds
+	Type Regular
+	PixelFormat DXT5
+	Levels 1
+	Usage UNKNOWN
+	UsageFlags -
+	ExtraFlags 0
+}

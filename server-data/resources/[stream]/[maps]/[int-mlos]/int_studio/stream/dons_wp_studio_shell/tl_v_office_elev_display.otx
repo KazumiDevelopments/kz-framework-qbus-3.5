@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image tl_v_office_elev_display.dds
+	Type Regular
+	PixelFormat DXT1
+	Levels 6
+	Usage DIFFUSE
+	UsageFlags -
+	ExtraFlags 0
+}

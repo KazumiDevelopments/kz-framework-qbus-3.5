@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image vipl_table_wd_n.dds
+	Type Regular
+	PixelFormat DXT5
+	Levels 8
+	Usage UNKNOWN
+	UsageFlags -
+	ExtraFlags 0
+}

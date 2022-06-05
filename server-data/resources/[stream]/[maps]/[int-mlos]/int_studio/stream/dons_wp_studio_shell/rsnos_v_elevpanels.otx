@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image rsnos_v_elevpanels.dds
+	Type Regular
+	PixelFormat DXT1
+	Levels 9
+	Usage DIFFUSE
+	UsageFlags -
+	ExtraFlags 0
+}

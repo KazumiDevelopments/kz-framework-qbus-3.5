@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image xj_v_rubber.dds
+	Type Regular
+	PixelFormat DXT1
+	Levels 6
+	Usage DIFFUSE
+	UsageFlags  HD_SPLIT
+	ExtraFlags 0
+}

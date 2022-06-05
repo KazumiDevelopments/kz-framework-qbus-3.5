@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image nxg_tl_v_jewel2_wall.dds
+	Type Regular
+	PixelFormat DXT5
+	Levels 8
+	Usage UNKNOWN
+	UsageFlags -
+	ExtraFlags 0
+}

@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image tl_v_graboffice_ceiling_panel_n.dds
+	Type Regular
+	PixelFormat DXT5
+	Levels 7
+	Usage UNKNOWN
+	UsageFlags -
+	ExtraFlags 0
+}

@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image v_glass_dv_10percentgrey_a.dds
+	Type Regular
+	PixelFormat DXT5
+	Levels 1
+	Usage UNKNOWN
+	UsageFlags -
+	ExtraFlags 0
+}

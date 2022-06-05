@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image xj_v_granite.dds
+	Type Regular
+	PixelFormat DXT1
+	Levels 8
+	Usage DIFFUSE
+	UsageFlags -
+	ExtraFlags 0
+}

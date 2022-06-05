@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image xj_v_redfabric.dds
+	Type Regular
+	PixelFormat DXT5
+	Levels 7
+	Usage UNKNOWN
+	UsageFlags -
+	ExtraFlags 0
+}

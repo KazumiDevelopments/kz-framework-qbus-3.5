@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image v_fib_bthrm_tiles_001_dm.dds
+	Type Regular
+	PixelFormat DXT5
+	Levels 7
+	Usage UNKNOWN
+	UsageFlags -
+	ExtraFlags 0
+}
