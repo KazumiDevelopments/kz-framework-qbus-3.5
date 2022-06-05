@@ -1,6 +1,18 @@
 # kz-framework-qbus-3.5
 A NoPixel Like Server.
 
+# NOTE
+THERE IS NO SUPPORT GIVEN FOR THIS SERVER.
+
+This server uses GHMATTIMSQL not OXMYSQL so if you want to add or use these resources some conversion is needed.
+
+Also to add:
+np-vehicles
+np-clothing
+np-weapons 
+
+These resources will not be in the repo to stop the repo being taken down, But these resources are widely available on most sites.
+
 # Kazumi Framework
 Hey all!
 
