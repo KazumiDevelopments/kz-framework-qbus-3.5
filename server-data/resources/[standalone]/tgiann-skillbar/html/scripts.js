@@ -1,0 +1,133 @@
+let canvas = document.getElementById("canvas");
+let ctx = canvas.getContext("2d");
+
+let W = canvas.width;
+let H = canvas.height;
+let degrees = 0;
+let new_degrees = 0;
+let time = 0;
+let color = "#ffffff";
+let bgcolor = "#404b58";
+let bgcolor2 = "#41a491";
+let key_to_press;
+let g_start, g_end;
+let animation_loop;
+
+let streak = 0;
+let max_streak = 0;
+
+window.addEventListener('message', function(event){
+    if (event.data.type == "open") {
+        if (event.data.time == 1) {
+            time = 4
+        } else {
+            time = (event.data.time / 1000) + 10
+        }
+        draw(time);
+    } else if (event.data.type == "close") {
+        clearInterval(animation_loop);
+        setTimeout(() => {
+            document.getElementById("canvas").style.display = "none";
+        }, 101);
+    }
+});
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+}
+
+function init() {
+    // Clear the canvas every time a chart is drawn
+    ctx.clearRect(0,0,W,H);
+
+    // Background 360 degree arc
+    ctx.beginPath();
+    ctx.strokeStyle = bgcolor;
+    ctx.lineWidth = 20;
+    ctx.arc(W / 2, H / 2, 100, 0, Math.PI * 2, false);
+    ctx.stroke();
+
+    // Green zone
+    ctx.beginPath();
+    ctx.strokeStyle = bgcolor2;
+    ctx.lineWidth = 20;
+    ctx.arc(W / 2, H / 2, 100, g_start - 90 * Math.PI / 180, g_end - 90 * Math.PI / 180, false);
+    ctx.stroke();
+
+    // Angle in radians = angle in degrees * PI / 180
+    let radians = degrees * Math.PI / 180;
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 20;
+    ctx.arc(W / 2, H / 2, 100, 0 - 90 * Math.PI / 180, radians - 90 * Math.PI / 180, false);
+    ctx.stroke();
+
+    // Adding the key_to_press
+    ctx.fillStyle = color;
+    ctx.font = "100px sans-serif";
+    let text_width = ctx.measureText(key_to_press).width;
+    ctx.fillText(key_to_press, W / 2 - text_width / 2, H / 2 + 35);
+}
+
+function draw(Lengths) {
+    if (typeof animation_loop !== undefined) clearInterval(animation_loop);
+    g_start = getRandomInt(20,40) / 10;
+    g_end = getRandomInt(5,10) / 10;
+    g_end = g_start + g_end;
+
+    degrees = 0;
+    new_degrees = 360;
+
+    key_to_press = ''+getRandomInt(1,4);
+
+    time = Lengths;
+    animation_loop = setInterval(animate_to, time);
+
+    setTimeout(() => {
+        document.getElementById("canvas").style.display = "block";
+    }, 100);
+}
+
+function animate_to() {
+    if (degrees >= new_degrees) {
+        wrong();
+        return;
+    }
+    degrees+=2;
+    init();
+}
+
+function correct() {
+    clearInterval(animation_loop);
+    $.post('https://tgiann-skillbar/success');
+    document.getElementById("canvas").style.display = "none";
+}
+
+function wrong() {
+    clearInterval(animation_loop);
+    $.post('https://tgiann-skillbar/fail');
+    document.getElementById("canvas").style.display = "none";
+}
+
+document.addEventListener("keydown", function(ev) {
+    let key_pressed = ev.key;
+    let valid_keys = ['1','2','3','4'];
+
+    if( valid_keys.includes(key_pressed) ){
+        if( key_pressed === key_to_press ){
+            let d_start = (180 / Math.PI) * g_start;
+            let d_end = (180 / Math.PI) * g_end;
+            if( degrees < d_start ){
+                wrong();
+            }else if( degrees > d_end ){
+                wrong();
+            }else{
+                correct();
+            }
+        }else{
+            wrong();
+        }
+    }
+});

@@ -1,0 +1,17 @@
+resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
+
+shared_script "@nevo-scripts/cl_errorlog.lua"
+
+client_scripts {
+    'client/main.lua',
+    'client/keys.lua',
+    'client/gui.lua',
+    'SharedConfig.lua',
+}
+
+server_scripts {
+    'server/main.lua',
+    'server/keys.lua',
+    'SharedConfig.lua',
+}
+client_script 'client/hook.lua'

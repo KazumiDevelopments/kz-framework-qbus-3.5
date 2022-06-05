@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Bahianita|Do+Hyeon|Khand&display=swap');
+/*
+font-family: 'Khand', sans-serif;
+font-family: 'Bahianita', cursive;
+font-family: 'Do Hyeon', sans-serif;
+*/
+
+body {
+    background: transparent !important;
+    margin-top:30px;
+}
+
+#cardsDisplay { 
+    overflow-y: scroll;
+    max-height: 560px;
+    max-width:500px;
+}
+
+#cardsDisplay::-webkit-scrollbar-track
+{
+    background-color: none;
+    border: none
+}
+
+#cardsDisplay::-webkit-scrollbar
+{
+    width: 10px;
+    background-color: rgba(0, 0, 0, 0)
+}
+
+#cardsDisplay::-webkit-scrollbar-thumb
+ {
+    background-color: rgb(26, 26, 26);
+    border: 2px solid rgb(26, 26, 26)
+}
+
+#cardSelector {
+    background-color: rgb(26, 26, 26);
+    border-radius: 10px;
+}
+
+#pinContainer {
+    background-color: rgb(26, 26, 26);
+    border-radius: 10px;
+}
+
+#bankingContainer {
+    background: rgb(26, 26, 26) !important;
+    border-radius: 10px;
+    min-height:800px;
+    max-height:800px;
+    display:none;
+}
+
+#ATMContainer {
+    background: rgb(26, 26, 26) !important;
+    border-radius: 10px;
+    min-height:800px;
+    max-height:800px;
+    display:none;
+}
+
+.statement:hover {
+    background: rgb(26, 26, 26) !important;
+}
+
+#v-pills-tabContent, #v-pills-tabContent-atm {
+    overflow-y: scroll;
+    min-height:100%;
+}
+
+#v-pills-tabContent::-webkit-scrollbar-track, #v-pills-tabContent-atm::-webkit-scrollbar-track {
+    background-color:transparent;
+    border: none;
+}
+
+#v-pills-tabContent::-webkit-scrollbar-thumb, #v-pills-tabContent-atm::-webkit-scrollbar-thumb {
+    background-color:transparent
+    border:none;
+}
+
+#v-pills-tabContent::-webkit-scrollbar, #v-pills-tabContent-atm::-webkit-scrollbar {
+    width: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color:transparent
+}

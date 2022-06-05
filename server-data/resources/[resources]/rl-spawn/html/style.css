@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.container {
+    font-family: 'Source Sans Pro', monospace;
+}
+ 
+.spawn-locations {
+    position: absolute;
+    top: 10vh;
+    left: 10vh;
+}
+
+.location {
+    border-radius: 0.4rem;
+    background-color: rgba(10, 10, 10, 0.8);
+    width: 28vh;
+    height: 4.5vh;
+    margin-bottom: .75vh;
+    transition: 0.2s;
+    -webkit-box-shadow: 0px 10px 15px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 15px -10px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 15px -10px rgba(0,0,0,0.75);
+}
+
+.location > p {
+    position: relative;
+    color: white;
+    text-align: center;
+    line-height: 4.5vh;
+    font-size: 1.4vh;
+}
+
+.location:hover {
+    background-color: rgb(72, 112, 158);
+    transition: 0.2s;
+}
+
+.selected {
+    background-color: rgb(72, 112, 158);
+}
+
+.submit-spawn {
+    border-radius: 0.4rem;
+    background-color: rgb(72, 112, 158);
+    width: 28vh;
+    height: 4.5vh;
+    margin-bottom: .75vh;
+    transition: 0.2s;
+    -webkit-box-shadow: 0px 10px 15px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 15px -10px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 15px -10px rgba(0,0,0,0.75);
+    transition: 0.2s;
+}
+
+.submit-spawn > p {
+    position: relative;
+    color: white;
+    text-align: center;
+    line-height: 4.5vh;
+    font-size: 13px;
+    font-family: 'Lato';
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.submit-spawn:hover {
+    background-color: rgb(72, 112, 158);
+    transition: 0.2s;
+}
+
+#spawn-label {
+    font-weight: bold;
+}
+
+.loclabel {
+    width: 28vh;
+    height: 4.5vh;
+    margin-bottom: .75vh;
+    transition: 0.2s;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 0.4rem;
+    -webkit-box-shadow: 0px 10px 15px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 15px -10px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 15px -10px rgba(0,0,0,0.75);
+}
+
+.loclabel > p {
+    font-family: 'Lato';
+    letter-spacing: 1px;
+    font-weight: bold;
+    position: relative;
+    color: black;
+    text-align: center;
+    line-height: 4.5vh;
+    font-size: 13px;
+}

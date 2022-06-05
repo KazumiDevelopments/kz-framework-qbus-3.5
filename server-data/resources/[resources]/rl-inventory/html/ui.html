@@ -1,0 +1,210 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/app.js" type="text/javascript" defer></script>
+
+</head>
+
+<body style="background-color: rgba(0,0,0,0); font-family: 'Roboto', sans-serif !important;">
+    <div id="qbus-inventory">
+        <div class="inventory-info">
+            <div class="player-inventory-bg"></div>
+            <div class="other-inventory-bg"></div>
+            <div class="player-inv-info">
+                <span id="player-inv-label"></span><br>
+                <div style="width: 53.5vh; margin-left: 0.2vh;">
+                    <div id="progressbar">
+                        <div class="progress-player"></div>
+                    </div>
+                </div>
+                <span id="player-inv-weight"></span>
+            </div>
+            <div class="other-inv-info">
+                <span id="other-inv-label"></span><br>
+                <div style="width: 53.7vh; margin-left: 0.2vh;">
+                    <div id="progressbar-other">
+                        <div class="progress-other"></div>
+                    </div>
+                </div>
+                <span id="other-inv-weight"></span>
+            </div>
+        </div>
+
+        <div class="inv-container">
+            <div class="ply-inv-container">
+                <div class="player-inventory" data-inventory="player"></div>
+            </div>
+
+            <div class="inv-options">
+                <div class="inv-options-list">
+                    <div class="options-box"></div>
+                    <button id="reset" class="reset">Reset Number</button>
+                    <input type="number" id="item-amount" class="inv-option-item" min=0 value="0"
+                        oninput="validity.valid||(value='');" onclick="this.select();"></input>
+                    <div id="item-use" class="use">Use</div>
+                    </br></br>
+                    <div id="close-ui" class="closeUi" onclick="closeInventory();">Close</div>
+                    <div class="bottom-buttons">
+                        <span class="bottom-button settings-button" onclick="openHudMenu()">
+                            ⚙️
+                        </span>
+                        <span class="bottom-button help-button"
+                            onmouseover="$('.help-menu').fadeIn(370); $('.other-inventory').fadeOut();"
+                            onmouseout="$('.help-menu').fadeOut(370); $('.other-inventory').fadeIn();">
+                            ?
+                        </span>
+                        <!-- <span class="bottom-button clothing-button" id="clothing-menu">
+                            C
+                        </span> -->
+                    </div>
+
+
+
+                    <!-- Active but Unused -->
+                    <!-- <div id="item-give" class='give'>Give</div> -->
+                </div>
+            </div>
+            <div class="oth-inv-container">
+                <div class="help-menu">
+
+                    <h3><strong>About:</strong></h3>
+                    <ul>
+                        <li>To move a full stack, make sure the <strong>NUMBER</strong> field is set to
+                            <strong>0</strong>.
+                        </li>
+                        <br />
+                        <li><strong>RESET NUMBER</strong> will restore the value to <strong>0</strong>.</li>
+                        <br />
+                        <li>The <strong>NUMBER</strong> field will <strong>NOT</strong> reset on close, so get used to
+                            <strong>CLEARING</strong> it!
+                        </li>
+                        <br />
+                        <li>You can <strong>DOUBLE CLICK</strong> an item to <strong>USE</strong>.</li>
+                    </ul>
+                    <hr />
+                    <h3><strong>Shops:</strong></h3>
+                    <ul>
+                        <li>Put in the amount you want to buy in the <strong>NUMBER</strong> field and then drag the
+                            shop item into your inventory.</li>
+                    </ul>
+                    <hr />
+                    <h3><strong>Item Durability:</strong></h3>
+                    <ul>
+                        <li>Some items will decay on <strong>USE</strong>, eventually fading to a reddish color. (Mostly
+                            <strong>WEAPONS</strong>)
+                        </li>
+                        <br />
+                        <li>Once an item reaches 5%, it will become <strong>ALMOST </strong> destroyed, whilst still
+                            being usable.</li>
+                        <br />
+                        <li>Once an item reaches 0%, it will be <strong>DESTROYED</strong> and <strong>REMOVED</strong>
+                            from your inventory.</li>
+                    </ul>
+                    <hr />
+                    <h3><strong>Weapons:</strong></h3>
+                    <ul>
+                        <li><strong>CLICK</strong> on a <strong>WEAPON</strong> to <strong>VIEW</strong> its
+                            Attachments.</li>
+                        <br />
+                        <li>You will need a <strong>WEAPON</strong> in your inventory to <strong>VIEW</strong>.</li>
+                    </ul>
+                    <!-- <button type="button" onclick="$('.help-menu').fadeOut(); $('.other-inventory').fadeIn();">Close</button> -->
+                </div>
+
+                <div class="cloth" style="position:absolute; right:18%; top:26vh">
+                    <img id="top" src="cloth/shirt.svg" onmouseover="$(this).attr('title', 'T-Shirt').tooltip()" />
+                    <br>
+                    <img id="vest" src="cloth/vest.svg" onmouseover="$(this).attr('title', 'Vest').tooltip()" />
+                    <br>
+                    <img id="pants" src="cloth/pants.svg" onmouseover="$(this).attr('title', 'Pants').tooltip()" />
+                    <br>
+                    <img id="shoes" src="cloth/shoes.svg" onmouseover="$(this).attr('title', 'Shoes').tooltip()" />
+                    <br>
+                    <img id="shirt" src="cloth/jacket.svg" onmouseover="$(this).attr('title', 'Jacket').tooltip()" />
+                    <br>
+                    <img id="hat" src="cloth/hat.svg" onmouseover="$(this).attr('title', 'Hat').tooltip()" />
+                    <br>
+                    <img id="glasses" src="cloth/glasses.svg"
+                        onmouseover="$(this).attr('title', 'Glasses').tooltip()" />
+                    <br>
+                    <img id="watch" src="cloth/watch.svg" onmouseover="$(this).attr('title', 'Watch').tooltip()" />
+                    <br>
+                    <img id="mask" src="cloth/mask.png" onmouseover="$(this).attr('title', 'Mask').tooltip()" />
+                </div>
+
+                <div class="other-inventory" data-inventory="other"></div>
+            </div>
+        </div>
+        <div class="ply-hotbar-inventory" data-inventory="hotbar"></div>
+        <div class="ply-iteminfo-container">
+            <div class="ply-iteminfo">
+                <div class="iteminfo-content">
+                    <div class="item-info-title"></div>
+                    <div class="item-info-description"></div>
+                    <div class="item-info-line"></div>
+
+                    <div class="item-info-stats"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="inv-background"></div>
+    </div>
+
+
+
+
+    <div class="weapon-attachments-container">
+        <div class="weapon-attachments-container-title">Pistol | <span style="font-size: 2vh;">9mm</span></div>
+        <div class="weapon-attachments-container-description">This is a water gun yaay ...</div>
+        <div class="weapon-attachments-container-details"><span style="font-weight: bold; letter-spacing: .1vh;">Serial
+                Number</span><br> 12345678<br><br><span
+                style="font-weight: bold; letter-spacing: .1vh;">Durability</span>
+            <div class="weapon-attachments-container-detail-durability">
+                <div class="weapon-attachments-container-detail-durability-total"></div>
+            </div>
+        </div>
+        <img src="./attachment_images/weapon_pistol.png" class="weapon-attachments-container-image">
+        <div class="weapon-attachments-title"><span style="font-weight: bold; letter-spacing: .1vh;">Attachments</span>
+        </div>
+        <div class="weapon-attachments"></div>
+        <div class="weapon-attachments-remove"><i class="fas fa-trash"></i></div>
+        <div class="weapon-attachments-back">
+            <p>RETURN</p>
+        </div>
+    </div>
+    <div class="combine-option-container">
+        <div class="btn-combine CombineItem">
+            <p>Combine</p>
+        </div>
+        <div class="btn-combine SwitchItem">
+            <p>Switch</p>
+        </div>
+    </div>
+    <div class="itemboxes-container"></div>
+    <div class="itembox-container template"></div>
+    <div class="requiredItem-container"></div>
+    <div class="z-hotbar-inventory"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

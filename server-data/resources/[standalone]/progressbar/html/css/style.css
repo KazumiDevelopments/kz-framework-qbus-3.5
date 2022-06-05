@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+html {
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: transparent !important;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+
+}
+
+.progress-container {
+    display: none;
+    z-index: 5;
+    color: #fff;
+    width:15%;
+    position: fixed;
+    bottom: 12.65%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #E6E6E5;
+}
+
+.progress-labels {
+    width: 100%;
+    height: 4vh;
+    line-height: 4vh;
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+    white-space: nowrap;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.7px;
+    font-weight: 600;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: none;
+    text-shadow: 1px 1px 1px rgba(1,1,1,1);
+}
+
+.progress-labels div {
+    font-size: 16px;
+    line-height: 3.5vh;
+    position: relative;
+    color: #ffffff;
+    z-index: 10;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 3.5vh;
+    background: rgba(0, 0, 0, 0.251);
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    white-space: nowrap;
+    border-radius: 2px;
+}
+
+.progress-bar {
+    background-color: #5590d8!important;
+    width: 80%;
+    height: 4vh;
+    transition: width 0.3s;
+    transition-timing-function: ease-out;
+}

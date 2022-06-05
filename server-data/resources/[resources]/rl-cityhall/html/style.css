@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body {
+    overflow: hidden;
+}
+
+.container {
+    display: none;
+    height: 100vh;
+}
+
+.cityhall-main-container{
+    position: relative;
+    background-position: center center;
+    /*background-image: url('./img/img-1.jpg');*/
+    backface-visibility: hidden;
+    width: 90vh;
+    height: 60vh;
+    /*animation: slideBg 10s ease-in-out infinite 0s;*/
+    animation-timing-function: ease-in-out;
+    
+    margin: 0 auto;
+    top: 15vh;
+
+    border-radius: 7px;
+    background: rgba(80, 80, 80, 0.6);
+    filter: drop-shadow(0 0 0.75em rgba(60, 60, 60, 0.6));
+    word-wrap: break-word;
+    overflow: hidden;
+   
+
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.226);
+
+    /* position: absolute;
+    border-radius: 7px;
+    background: rgba(80, 80, 80, 0.6);
+    filter: drop-shadow(0 0 0.75em rgba(60, 60, 60, 0.6));
+    word-wrap: break-word;
+    overflow: hidden; */
+}
+
+.header-logo {
+    position: relative;
+    width: 90.0vh;
+}
+
+@keyframes slideBg {
+    0% {
+        background-image: url('./img/img-1.jpg');
+    }
+    25% {
+        background-image: url('./img/img-1.jpg');
+    }
+    50% {
+        background-image: url('./img/img-2.jpg');
+    }
+    95% {
+        background-image: url('./img/img-2.jpg');
+    }
+    100% {
+        background-image: url('./img/img-1.jpg');
+    }
+}
+
+.cityhall-header {
+    
+}
+
+.cityhall-option-blocks {
+    position: relative;
+    height: 40vh;
+    width: 80vh;
+    margin: 0 auto;
+    top: 5vh;
+    
+    
+}
+
+.cityhall-identity-page {
+    display: none;
+    position: relative;
+    height: 40vh;
+    width: 80vh;
+    margin: 0 auto;
+    top: 5vh;
+    
+}
+
+.cityhall-job-page {
+    display: none;
+    position: relative;
+    height: 40vh;
+    width: 80vh;
+    margin: 0 auto;
+    top: 5vh;
+    
+}
+
+.cityhall-weapon-page {
+    display: none;
+    position: relative;
+    height: 40vh;
+    width: 80vh;
+    margin: 0 auto;
+    top: 5vh;
+    
+}
+
+.cityhall-option-block {
+    position: relative;
+    width: 18vh;
+    height: 18vh;
+    float: left;
+    margin-right: 2vh;
+    margin-bottom: 2vh;
+    left: 1vh;
+    top: 1vh;
+    text-align: center;
+    border-bottom: 6px solid rgba(255, 255, 255, 0);
+    transition: all 0.1s linear;
+}
+
+.cityhall-option-block:hover {
+    border-bottom: 6px solid rgb(255, 255, 255);
+    opacity: 0.9;
+}
+
+.cityhall-option-block > i {
+    font-size: 5vh;
+    line-height: 10vh;
+    color: white;
+}
+
+.cityhall-option-block > p {
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1vh;
+    font-size: 1.6vh;
+}
+
+.identity-page-blocks {
+    position: relative;
+    height: 100%;
+    width: 25%;
+    padding: 1vh;
+}
+
+.identity-page-block {
+    background: rgba(80, 80, 80, 0.4);
+    border-color: rgba(180, 180, 180, 0.4);
+    border-radius: 5px;
+    color: rgb(200, 200, 200);
+}
+
+.identity-page-block:hover {
+    background: rgba(100, 100, 100, 0.4);
+}
+
+.identity-page-block > p {
+    position: relative;
+    text-align: center;
+    line-height: 6vh;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1vh;
+    color: white;
+    font-size: 1.3vh;
+}
+
+.hover-description {
+    position: absolute;
+    top: 5vh;
+    right: 0.4vh;
+    padding: 1vh;
+    margin: 4vh;
+    background: rgba(34, 34, 34, 0.75);
+    border-radius: 1vh;
+}
+
+.hover-description > p {
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 1.3vh;
+}
+
+.identity-selected {
+    border-bottom: 2px solid #fff;
+}
+
+.request-identity-button {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 5vh;
+    /* width: fit-content; */
+    padding: 5px;
+    /* height: 5vh; */
+    background: rgba(133, 164, 214, 0.637);
+    border-radius: 7px;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.request-identity-button > p {
+    color: white;
+    text-align: center; 
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 1.1vh;
+    font-weight: bold;
+    line-height: 3vh;
+    letter-spacing: 0.05vh;
+}
+
+.job-page-blocks {
+    position: relative;
+    height: 100%;
+    width: 25%;
+    padding: 1vh;
+}
+
+.job-page-block {
+    background: rgba(80, 80, 80, 0.4);
+    border-color: rgba(180, 180, 180, 0.4);
+    border-radius: 5px;
+    color: rgb(200, 200, 200);
+}
+
+.job-page-block:hover {
+    background: rgba(100, 100, 100, 0.4);
+}
+
+.job-page-block > p {
+    position: relative;
+    text-align: center;
+    line-height: 6vh;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1vh;
+    color: white;
+    font-size: 1.3vh;
+}
+
+.weapon-page-block {
+    width: 100%;
+    height: 15%;
+    background: rgb(212, 53, 53);
+    transition: all 0.1s ease-in-out;
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+}
+
+.weapon-page-block:hover {
+    background: rgb(255, 58, 58);
+}
+
+.weapon-page-block > p {
+    position: relative;
+    text-align: center;
+    line-height: 6vh;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1vh;
+    color: white;
+    font-size: 1.3vh;
+}
+
+.apply-weapon-button {
+    position: relative;
+    top: 1vh;
+    right: 0;
+    margin: 1vh;
+    width: 20vh;
+    height: 5vh;
+    background: rgb(235, 50, 50);
+    transition: all 0.1s linear;
+}
+
+.apply-weapon-button > p {
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 1.1vh;
+    font-weight: bold;
+    line-height: 5vh;
+    letter-spacing: 0.05vh;
+}
+
+.remove-weapon-button {
+    position: relative;
+    top: 1vh;
+    right: 0;
+    margin: 1vh;
+    width: 20vh;
+    height: 5vh;
+    background: rgb(235, 50, 50);
+    transition: all 0.1s linear;
+}
+
+.remove-weapon-button > p {
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 1.1vh;
+    font-weight: bold;
+    line-height: 5vh;
+    letter-spacing: 0.05vh;
+}
+
+.check-weapon-button {
+    position: relative;
+    top: 1vh;
+    right: 0;
+    margin: 1vh;
+    width: 20vh;
+    height: 5vh;
+    background: rgb(235, 50, 50);
+    transition: all 0.1s linear;
+}
+
+.check-weapon-button > p {
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 1.1vh;
+    font-weight: bold;
+    line-height: 5vh;
+    letter-spacing: 0.05vh;
+}
+
+.apply-job-button {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 5vh;
+    width: 20vh;
+    height: 5vh;
+    background: rgba(133, 164, 214, 0.637);
+    transition: all 0.1s linear;
+    border-radius: 7px;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.apply-job-button:hover {
+    background: rgba(133, 164, 214, 0.837);
+}
+
+.apply-job-button > p {
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 1.1vh;
+    font-weight: bold;
+    line-height: 3vh;
+    letter-spacing: 0.05vh;
+}
+
+.job-selected {
+    border-bottom: 2px solid #fff;
+}
+
+.back-to-main {
+    position: absolute;
+    top: 0;
+    right: 2.5vh;
+    margin: 2vh;
+    width: 20vh;
+    height: 5vh;
+    background: rgba(133, 164, 214, 0.637);
+    border-radius: 7px;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.back-to-main > p {
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 1.1vh;
+    font-weight: bold;
+    line-height: 3vh;
+    letter-spacing: 0.05vh;
+}

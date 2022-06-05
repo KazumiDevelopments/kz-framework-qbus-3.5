@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link href="scripting/jquery-ui.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <title>RL Coords Saver</title>
+    </head>
+    <body">
+        <div class="container-fluid" style="background-color: black;">
+            <div class="row">
+                <div class="col-12 text-right rounded" style="background:rgba(17, 17, 17, 0.6); position: absolute; right:15px; top:110px; max-width:110px; display:none;" id="showCoords">
+                <span id="nuiX"></span> :<strong>X</strong><br>
+                <span id="nuiY"></span> :<strong>Y</strong><br>
+                <span id="nuiZ"></span> :<strong>Z</strong><br>
+                <span id="nuiH"></span> :<strong>H</strong>
+                </div>
+            </div>
+            <div id="copyRow">
+                <div id="jsonCopy" style="display:none;"></div>
+                <div id="stndCopy" style="display:none;"></div>
+                <div id="tableCopy" style="display:none;"></div>
+                <div id="vector3Copy" style="display:none;"></div>
+                <div id="vector4Copy" style="display:none;"></div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">ConnectRP Coords Saver</h5>
+                  <button type="button" class="close" data-dismiss="modal" id="closeWindow2" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-2">Current Coordinates<br>
+                    <strong>X:</strong> <span id="xpos"></span> <strong>Y:</strong> <span id="ypos"></span> <strong>Z:</strong> <span id="zpos"></span> <strong>H:</strong> <span id="hpos"></span></div>
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade p-2" id="copy1" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="container">
+                                <div class="row mb-3">
+                                    <div class="col-12 text-center">By Selecting a button below, you will close this Interface, and the coordinates you are currently standing at will be copied to your clipboard, in the requested structure.</div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <button class="btn btn-sm btn-primary m-1" id="json">JSON String</button>
+                                    <button class="btn btn-sm btn-primary m-1" id="coordTable">Table Structure</button>
+                                    <button class="btn btn-sm btn-primary m-1" id="normCoords">Standard</button>
+                                    <button class="btn btn-sm btn-primary m-1" id="vector3">Vector3</button>
+                                    <button class="btn btn-sm btn-primary m-1" id="vector4">Vector4</button>
+                                </div>
+                            </div>
+
+                        </div>
+                      </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success" id="saveLocation" style="display:none;">Save Location</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeWindow" style="display:none;">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="app.js"></script>
+    </body>
+</html>

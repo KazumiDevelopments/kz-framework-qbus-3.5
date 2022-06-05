@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>RL Cityhall</title>
+</head>
+    <body>
+        <div class="container">
+            <div class="cityhall-main-container">
+                <div class="cityhall-header">
+                    <img src="./img/header-logo.png" alt="header-logo" class="header-logo">
+                </div>
+
+                <div class="cityhall-option-blocks">
+                    <div class="cityhall-option-block" data-page="identity"><i class="fas fa-passport"></i><p>Identity</p></div>
+                    <div class="cityhall-option-block" data-page="job"><i class="fas fa-user-tie"></i><p>Employment agency</p></div>
+                    <!-- <div class="cityhall-option-block" data-page="weapon"><i class="fas fa-user-tie"></i><p>Test</p></div> -->
+                </div>
+
+                <div class="cityhall-identity-page">
+                    <div class="identity-page-blocks">
+                    </div>
+
+                    <div class="hover-description">
+
+                    </div>
+
+                    <div class="request-identity-button"></div>
+
+                    <div class="back-to-main"><p>Back</p></div>
+                </div>
+
+                <div class="cityhall-job-page">
+                    <div class="job-page-blocks">
+                        <div class="job-page-block" data-job="trucker"><p>Trucker</p></div>
+                    </div>
+
+                    <div class="apply-job-button"><p>Take a job!</p></div>
+
+                    <div class="back-to-main"><p>Back</p></div>
+                </div>
+
+                <div class="cityhall-weapon-page">
+                    <div class="apply-weapon-button"><p>Add</p></div>
+                    <div class="remove-weapon-button"><p>Remove</p></div>
+                    <div class="check-weapon-button"><p>Check</p></div>
+                    <div class="back-to-main"><p>Back</p></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./app.js"></script>
+</html>

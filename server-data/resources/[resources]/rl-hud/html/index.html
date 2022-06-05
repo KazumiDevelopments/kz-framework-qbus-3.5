@@ -1,0 +1,140 @@
+<html>
+    <head>
+        <title>Amplify Roleplay HUD</title>
+        <link href="./css/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+        <link href="./css/style.css" rel="stylesheet" type="text/css"/>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="./css/grid.css">
+        <link rel="stylesheet" type="text/css" href="./css/vstyle.css">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    </head>
+
+    <body style="display: none;">
+
+        <!---- //////////////////////////////// -->
+        <!---- ////////// PLAYER HUD ///////// -->
+        <!---- //////////////////////////////// -->
+
+        <div id="statusHud">
+			<div id="varHealth" class="bar">
+				<img class="barIcon" src="img/heart.svg"></img>
+				<div id="boxSetHealth"></div>
+			</div>
+			<div id="varArmor" class="bar">
+				<img class="barIcon" src="img/shield.svg"></img>
+				<div id="boxSetArmour"></div>
+			</div>
+			<div id="varHunger" class="bar">
+				<img class="barIcon" src="img/burger.svg"></img>
+				<div id="boxSetHunger"></div>
+			</div>
+			<div id="varThirst" class="bar">
+				<img class="barIcon" src="img/water.svg"></img>
+				<div id="boxSetThirst"></div>
+			</div>
+			<div id="varOxygen" class="bar">
+				<img class="barIcon" src="img/oxy.svg"></img>
+				<div id="boxSetOxygen"></div>
+			</div>
+			<div id="varStress" class="bar">
+				<img class="barIcon" src="img/brain.svg"></img>
+				<div id="boxSetStress"></div> 
+            </div>
+            <div id="rectangleContainer" class="rectContainer">
+				<svg id="rect1" class= "rectangle1">
+					<rect class="rectangle1" />
+				</svg>
+				<svg id="rect2" class= "rectangle2">
+					<rect class="rectangle2" />
+				</svg>
+				<svg id="rect3" class= "rectangle3">
+					<rect class="rectangle3" />
+				</svg>
+			</div>
+		</div>
+
+        <!---- //////////////////////////////// -->
+        <!---- ////////// VEHICLE HUD ///////// -->
+        <!---- //////////////////////////////// -->
+
+        <div id="ui">
+            <div class="carStats" style="display: none;">
+                <div class="counter" id="idCounter">
+                    <div class="counter2" id="idCounter2">
+                        <div class="speedometer">
+                            <svg class="circle" width="50" height="50">
+                                <circle class="outer" stroke="#000000" stroke-width="0.9" style="stroke-opacity: 0.5;" fill="transparent" r="18" cx="25" cy="25" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                                <circle class="backgroundCircle" stroke="#000000" stroke-width="4" style="stroke-opacity: 0.4;" fill="transparent" r="18" cx="25" cy="25" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                                <circle class="progress progress-speed" stroke="url(#gradient)" stroke-width="2.5" style="stroke-opacity: 1;" fill="transparent" r="18" cx="25" cy="25" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                                <defs>
+                                    <linearGradient id="gradient">
+                                        <stop offset="30%" stop-color="#0E718B" />
+                                        <stop offset="100%" stop-color="#98D4E0" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="text">
+                                <span class="speed"></span>
+                                <div class="mph">km/h</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- GAUGES -->
+                <div class="gauges">
+                    <!-- FUEL -->
+                    <div class="dials" style="background-image: url(img/vehicle/fuel.png);">
+                        <svg class="circle" width="40" height="40">
+                            <circle class="backgroundCircle" stroke="#000000" stroke-width="3.5" style="stroke-opacity: 0.5;" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                            <circle class="progress progress-fuel" id="fuel" stroke="#ce2d2d00" stroke-width="3.5" style="stroke-opacity: .7;" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                            
+                        </svg>
+                    </div>
+                    
+                    <!-- SEATBELT -->
+                    <div class="dials" style='background-image: url(img/vehicle/seatbelt.png)'>
+                        <svg class="circle" width="40" height="40">
+                            <circle class="backgroundCircle" stroke="#000000" stroke-width="3.5" style="stroke-opacity: 0.5;" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                            <circle class="backgroundCircle" id="seatbelt" stroke="#ce2d2d00" stroke-width="3.5" style="stroke-opacity: .7;" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                        </svg>
+                    </div>
+    
+                    <!-- LIGHTS -->
+                    <div class="dials" id="lights" style='background-image: url(img/vehicle/lowbeam.png);'>
+                        <svg class="circle" width="40" height="40">
+                            <circle class="backgroundCircle" stroke="#000000" stroke-width="3.5" style="stroke-opacity: 0.5;" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                            <circle class="backgroundCircle" id="lights2" stroke="#ce2d2d00" stroke-width="3.5" style="stroke-opacity: .7;" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                        </svg>
+                    </div>
+    
+                    <!-- NITROUS -->
+                    <div class="dials" style='background-image: url(img/vehicle/nitrious.png);'>
+                        <svg class="circle" width="40" height="40">
+                            <circle class="backgroundCircle" stroke="#000000" stroke-width="3.5" style="stroke-opacity: 0.5;" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                            <circle class="progress progress-nitro" id="nitro" stroke="#ce2d2d00" stroke-width="3.5" style="stroke-opacity: .7;" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                        </svg>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="time" id="time" style="display: none;">
+                <text class="showInfoDni" id="clock"><span><strong>TIME</strong></span></text>
+            </div>
+
+            <div class="direction" id="direction" style="display: none;">
+                <div class="image"></div>
+            </div>
+
+            <div class="location2" id="location2" style="display: none;">
+                <text class="showInfoLok" id="showlocation">Signal Unavailable</text>
+            </div>
+        </div>
+    </body>
+    <script src="./js/jquery.min.js" type="text/javascript"></script>
+    <script src="./js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="./js/app.js" type="text/javascript"></script>
+</html>
