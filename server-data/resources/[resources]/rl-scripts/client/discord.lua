@@ -1,4 +1,4 @@
-SetDiscordAppId(947262882016559165)
+SetDiscordAppId(USUALLYNUMBERS) -- YOUR DISCORD APPID
 SetDiscordRichPresenceAsset('logo_name')
 
 local WaitTime = 2000 -- How often do  you want to update the status (In MS)
